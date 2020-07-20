@@ -1,0 +1,103 @@
+.window{
+    height:240px;
+    width:200px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px;
+    position:fixed;
+    right:30px;
+    top:30px;
+    z-index: 2147483647;
+    
+}
+.scWindow{
+    height:200px;
+    z-index: 2147483647;
+    width: 240px;
+    top: 15px;
+    right: 15px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px;
+    position:fixed;
+    display: block;
+}
+.button{
+    height:30px;
+    width:80px;
+    background:#005082;
+    border:none;
+    border-radius: 5px;
+    margin: -100px 100px;
+    color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px;
+    text-align: center;
+}
+
+.text{
+    font-size: 18px;
+    padding:0 5% 2% 5%;
+    
+}
+.x{
+    font-weight: bold;
+    font-size: 20px;
+    color:grey;
+    cursor:pointer;
+}
+.x:hover{
+    color:#000;
+}
+.textSc{
+    font-size: 18px;
+}
+.flexSc{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 10px;
+}
+.line{
+    height:1px;
+    width:auto;
+    background:grey;
+    margin:-10px 0;
+}
+.flex{
+    display: flex;
+    color:#000;
+    font-weight: bold;
+    font-size:18px !important;
+    text-decoration: none;
+    margin:15px 4px;
+}
+.request{
+    margin:0 -4px;
+}
+.winX{
+    font-weight: bold;
+    font-size: 18px;
+    margin:2px 180px;
+    cursor:pointer;
+}
+.winX:hover{
+    color:#000;
+}
+.sc{
+    display:flex;
+    margin:35px -10px;
+    font-size:18px;
+    font-weight: bold;
+    width:300px
+}
+.color{
+    font-weight: bold;
+    font-size: 14px;
+    width: 200px;
+}
+.flexCol{
+    margin: -70px 140px;
+}
+.prevSc{
+margin:-5px -20px;
+width: 200px;
+}
