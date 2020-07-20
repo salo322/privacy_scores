@@ -70,10 +70,10 @@ function(request, sender, sendResponse) {
      $('.prevSc').text('Increase');
      $('.prevSc').css('color','#ade498')
    }
-   if(result.key > result.prev){
+   if(result.key < result.prev){
      console.log('Decrease')
      $('.prevSc').text('Decrease');
-     $('.prevSc').css('color','e84a5f')
+     $('.prevSc').css('color','#e84a5f')
    }
 var canvas = document.getElementById("cvs");
 let widthC = "120";

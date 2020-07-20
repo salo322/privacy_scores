@@ -1,103 +1,106 @@
 .window{
-    height:240px;
-    width:200px;
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px;
-    position:fixed;
-    right:30px;
-    top:30px;
-    z-index: 2147483647;
+    height:240px !important;
+    width:200px !important;
+    border-radius: 5px !important;
+    background-color: rgb(255, 255, 255) !important;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px !important;
+    position:fixed !important;
+    right:30px !important;
+    top:30px !important;
+    z-index: 2147483647 !important;
     
 }
 .scWindow{
-    height:200px;
-    z-index: 2147483647;
-    width: 240px;
-    top: 15px;
-    right: 15px;
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px;
-    position:fixed;
-    display: block;
+    height:200px !important;
+    z-index: 2147483647 !important;
+    width: 240px !important;
+    top: 15px !important;
+    right: 15px !important;
+    border-radius: 5px !important;
+    background-color: rgb(255, 255, 255) !important;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px !important;
+    position:fixed !important;
+    display: block !important;
 }
 .button{
-    height:30px;
-    width:80px;
-    background:#005082;
-    border:none;
-    border-radius: 5px;
-    margin: -100px 100px;
-    color:#fff;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px;
-    text-align: center;
+    height:30px !important;
+    width:80px !important;
+    background:#005082 !important;
+    border:none !important;
+    border-radius: 5px !important;
+    margin: -100px 100px !important;
+    color:#fff !important;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px !important;
+    text-align: center !important;
 }
 
 .text{
-    font-size: 18px;
-    padding:0 5% 2% 5%;
+    font-size: 18px !important;
+    padding:0 5% 2% 5% !important;
     
 }
 .x{
-    font-weight: bold;
-    font-size: 20px;
-    color:grey;
-    cursor:pointer;
+    font-weight: bold !important;
+    font-size: 20px !important;
+    color:grey !important;
+    cursor:pointer !important;
 }
 .x:hover{
-    color:#000;
+    color:#000 !important;
 }
 .textSc{
-    font-size: 18px;
+    font-size: 18px !important;
 }
 .flexSc{
-    display: flex;
-    justify-content: space-between;
-    padding:10px 10px;
+    display: flex !important;
+    justify-content: space-between !important;
+    padding:10px 10px !important;
 }
 .line{
-    height:1px;
-    width:auto;
-    background:grey;
-    margin:-10px 0;
+    height:1px !important;
+    width:auto !important;
+    background:grey !important;
+    margin:-10px 0 !important;
 }
 .flex{
-    display: flex;
-    color:#000;
-    font-weight: bold;
+    display: flex !important;
+    color:#000 !important;
+    font-weight: bold !important;
     font-size:18px !important;
-    text-decoration: none;
-    margin:15px 4px;
+    text-decoration: none !important;
+    margin:15px 4px !important;
 }
 .request{
-    margin:0 -4px;
+    margin:0 -4px !important;
 }
 .winX{
-    font-weight: bold;
-    font-size: 18px;
-    margin:2px 180px;
-    cursor:pointer;
+    font-weight: bold !important;
+    font-size: 18px !important;
+    margin:2px 180px !important;
+    cursor:pointer !important;
 }
 .winX:hover{
-    color:#000;
+    color:#000 !important;
 }
 .sc{
-    display:flex;
-    margin:35px -10px;
-    font-size:18px;
-    font-weight: bold;
-    width:300px
+    display:flex !important;
+    margin:35px -10px !important;
+    font-size:18px !important;
+    font-weight: bold !important;
+    width:300px !important;
 }
 .color{
-    font-weight: bold;
-    font-size: 14px;
-    width: 200px;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    width: 200px !important;
 }
 .flexCol{
-    margin: -70px 140px;
+    margin: -70px 140px !important;
 }
 .prevSc{
-margin:-5px -20px;
-width: 200px;
+margin:-5px -20px !important;
+width: 200px !important;
+}
+.colorPrevSc{
+    width:200px;
 }

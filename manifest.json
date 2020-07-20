@@ -2,7 +2,7 @@
     
     "name": "Get privacy scores",
     "description": "get privacy scores from website",
-    "version": "0.3",
+    "version": "1.0.5",
     "permissions": [
         "storage",
         "unlimitedStorage",
