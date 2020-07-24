@@ -15,23 +15,33 @@ function(request, sender, sendResponse) {
           let scoresWindow = `
           <div class="scWindow">
           <div class="flexSc">
-          <p class="textSc">Privacy scores</p>
-          <div class="x">X</div>
+            <div class="privacyMonitor">
+            <p class="textSc">Privacy</p>
+            <p class="monitorSc">monitor</p>
+            </div>
+            <div class="x">X</div>
           </div>
-          <div class="line"></div>
-          <div class="flex">
-          <canvas id="cvs"></canvas>
-         <div class="sc">
-          <div class="scText">SCORE:</div>
-          <div class="scores">${result.key}</div>
-          
-          </div>
-          </div>
-          <div class="flexCol">
-          <p class="colorPrevSc" ></p>
-          <p class="prevSc">previous scores</p>
-          </div>
-            </div>`
+           <div class="line"></div>
+        
+        <div class="flexFor">
+              <div class="canvasSc">
+                <canvas id="cvs"></canvas>
+              </div>
+        
+        <div class="scoresContainer">
+            <div class="sc">
+                      <div class="scText">SCORE:</div>
+                      <div class="scores">${result.key}</div>
+            </div>
+         
+            <div class="colorPrevSc" ></div>
+            <div class="trendFlex">
+                   <p class="trendSc">Trend:</p>
+                   <p class="prevSc">previous scores</p>
+            </div>
+        </div>
+        </div>
+        </div>`
  
       $(scoresWindow).appendTo(document.body);
       $('.scWindow').nextAll('div').remove();
@@ -65,7 +75,7 @@ var ctx = canvas.getContext("2d");
 var percent = result.key/10;
 
 ctx.beginPath();
-ctx.arc(widthC/2,heightC/2, 35, 0, Math.PI * 2);
+ctx.arc(widthC/2,heightC/2, 25, 0, Math.PI * 2);
 ctx.strokeStyle = "#f7fbe1";
 ctx.lineWidth = 8;
 ctx.stroke();
@@ -73,7 +83,7 @@ ctx.closePath();
 
 var angle = percent/100*360;
 ctx.beginPath();
-ctx.arc(widthC/2, heightC/2, 35, -90 * Math.PI/180, (angle - 90) * Math.PI/180);
+ctx.arc(widthC/2, heightC/2, 25, -90 * Math.PI/180, (angle - 90) * Math.PI/180);
 if(percent > 30 && percent < 50){
 ctx.strokeStyle = "#fe91ca";
 $('.colorPrevSc').text('Very Poor')
