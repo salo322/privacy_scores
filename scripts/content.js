@@ -17,12 +17,10 @@ chrome.runtime.sendMessage({message: "dom",domainS:address});
 
 chrome.runtime.onMessage.addListener(
 function(request, sender, sendResponse) {
-  if (request.greeting == "hello"){
+  if (request.greeting == "hello"){   
 
- 
-    console.log(address)     
-    
-      chrome.storage.local.get(['key','prev','st'], function(result) {
+      chrome.storage.local.get(['key','prev','st','domSc'], function(result) {
+        
         if(result.key && result.st === 'success'){
           function succWindow(){
           let scoresWindow = `
@@ -133,6 +131,7 @@ ctx.fillStyle = "#fff"
           succWindow();
        
         }else if(result.st==='error'){
+          
           function errWindow(){
             let window = ` 
             <div class="window">
@@ -153,7 +152,15 @@ ctx.fillStyle = "#fff"
             
             </div>`
   document.body.innerHTML += window;
-  
+  if(result.domSc){
+    console.log(result.domSc)
+    $('.text').html('request sent');
+    $('.buttonSc').css('display','none')
+    setTimeout(()=>{
+      $('.window').remove();
+    },2000)
+         
+  }
   $('.window').nextAll('div').remove();
   
   
@@ -164,6 +171,9 @@ ctx.fillStyle = "#fff"
           }
           errWindow();
           $('.buttonSc').click(function(){
+           
+            chrome.storage.local.set({domSc:address});
+           
             $(this).css('display','none');
               $.ajax(`https://api.privacymonitor.com/score?q=${address}`, {
                 success: function(data,status) {
@@ -179,6 +189,8 @@ ctx.fillStyle = "#fff"
                   }
                    },
                 error: function() {
+                 
+                  
                 let pT= document.createElement('p');
                 let pInner = $(pT).text('request sent');
                 $('.text').html(pInner);
@@ -195,8 +207,10 @@ ctx.fillStyle = "#fff"
   
 
 
-
+       
       })
+      
     }
-  })     
+  })   
+
  

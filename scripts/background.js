@@ -10,8 +10,8 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
      chrome.runtime.onMessage.addListener(
       function(request, sender, sendResponse) {                      
-                     if (request.message == "dom"){
-                        
+         if (request.message == "dom"){
+           
                    
 $.ajax({
   url: `https://api.privacymonitor.com/score?q=${request.domainS}`,
@@ -52,6 +52,7 @@ $.ajax({
         38: "./images/grey.png"
          }
           })
+           
     console.log(status);
     chrome.storage.local.set({st:status});
       }
