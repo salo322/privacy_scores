@@ -1,4 +1,17 @@
 
+let address = window.location.hostname;
+if(location.host.indexOf('www.') === 0){
+  address = location.host.replace('www.','');
+}
+if(location.host.indexOf('web.') === 0){
+  address = location.host.replace('web.','');
+}
+if(location.host.indexOf('docs.') === 0){
+  address = location.host.replace('docs.','');
+}
+
+chrome.runtime.sendMessage({message: "dom",domainS:address});
+
 
 
 
@@ -7,7 +20,7 @@ function(request, sender, sendResponse) {
   if (request.greeting == "hello"){
 
  
-              
+    console.log(address)     
     
       chrome.storage.local.get(['key','prev','st'], function(result) {
         if(result.key && result.st === 'success'){
@@ -131,7 +144,9 @@ ctx.fillStyle = "#fff"
             <div class="winX">X</div>
             </div>
            <div class="line"></div>
-           <p class="text">Dear user, you can request to the website and analyse</p>
+           <p class="text">Sorry, we haven't reviewed ${address} yet.
+
+           If you would like us to add it to the queue for our legal experts to review, hit the "Request" button now.</p>
            <input class="buttonSc"
            type="button"
            value="request">

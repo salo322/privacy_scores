@@ -1,6 +1,6 @@
 .window{
-    height:250px !important;
-    width:200px !important;
+    width: 240px;
+    height:300px;
     border-radius: 5px !important;
     background-color: rgb(255, 255, 255) !important;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px !important;
@@ -26,7 +26,9 @@
 
 .text{
     font-size: 18px !important;
-    padding:0 5% 2% 5% !important;
+    text-align: justify;
+    line-height: 18px;
+    padding: 20px;
     
 }
 .x{
@@ -69,6 +71,8 @@
 
 .sc{
     display: flex !important;
+    font-size: 16px;
+    font-weight: bold;
 }
 .scoresContainer{
     display: grid !important;
@@ -92,14 +96,18 @@
 }
 .buttonSc{
     display: flex;
-    padding: 8px 18px;
+    padding: 8px 22px;
     background:#005082 !important;
     border:none !important;
     border-radius: 5px !important;
     color:#fff !important;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px !important;
-    margin: -15px 100px;
+    margin: -25px 80px;
 
+}
+.privacyErr{
+    font-size: 18px !important;
+    font-weight: bold !important;
 }
 .monitorErr{
     font-size: 18px !important;
