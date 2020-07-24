@@ -121,10 +121,14 @@ ctx.fillStyle = "#fff"
        
         }else if(result.st==='error'){
           function errWindow(){
-            let window = ` <div class="window">
+            let window = ` 
+            <div class="window">
             <div class="winX">X</div>
             <p class="text">Dear user, you can request to the website and analyse</p>
-            <button class="button"><p class="request">Request</p></button>
+            <input class="buttonSc"
+              type="button"
+              value="request">
+            </button>
             </div>`
   document.body.innerHTML += window;
   $('.window').nextAll('div').remove();

@@ -1,5 +1,5 @@
 .window{
-    height:auto !important;
+    height:250px !important;
     width:200px !important;
     border-radius: 5px !important;
     background-color: rgb(255, 255, 255) !important;
@@ -22,17 +22,7 @@
     position:fixed !important;
     display: block !important;
 }
-.button{
-    height:30px !important;
-    width:80px !important;
-    background:#005082 !important;
-    border:none !important;
-    border-radius: 5px !important;
-    margin: -100px 100px !important;
-    color:#fff !important;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px !important;
-    text-align: center !important;
-}
+
 
 .text{
     font-size: 18px !important;
@@ -68,6 +58,8 @@
     display:flex !important;
     justify-content: space-between !important;
     padding:10px 10px !important;
+    font-weight: bold;
+    font-size: 15px;
 }
 .privacyMonitor{
     display: flex !important;
@@ -88,4 +80,27 @@
 }
 .trendFlex{
     display: flex !important;
+}
+.winX{
+    display: flex;
+    justify-content: flex-end;
+    padding:5px 10px;
+    font-weight: bold !important;
+    font-size: 20px !important;
+    color:grey !important;
+    cursor:pointer !important;
+}
+.winX:hover{
+    color:#000 !important;
+}
+.buttonSc{
+    display: flex;
+    padding: 8px 18px;
+    background:#005082 !important;
+    border:none !important;
+    border-radius: 5px !important;
+    color:#fff !important;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px !important;
+    margin: -15px 100px;
+
 }

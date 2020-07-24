@@ -4,15 +4,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   })
                  });
  
-                 chrome.tabs.onActivated.addListener(function () {
-                   console.log("current tab:",tabId)
-                  chrome.tabs.executeScript(tabId, { file: "scripts/add.js" });
-                 
-              })          
-                
+        
 
-               chrome.runtime.onMessage.addListener(
-                function(request, sender, sendResponse) {                      
+     chrome.runtime.onMessage.addListener(
+      function(request, sender, sendResponse) {                      
                      if (request.message == "dom"){
                         
 
