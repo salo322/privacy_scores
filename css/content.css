@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter&family=Roboto&display=swap');
 .window{
     width: 240px;
-    height:auto;
+    height:300px;
     border-radius: 5px !important;
     background-color: rgb(255, 255, 255) !important;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px !important;
@@ -105,7 +105,7 @@
     border-radius: 5px !important;
     color:#fff !important;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px !important;
-    margin: -25px 80px;
+    margin: -5px 80px;
 
 }
 .privacyErr{
@@ -129,4 +129,7 @@
     justify-content: space-between;
     margin:5px 15px;
     
+}
+.gridCont{
+    display: grid;
 }

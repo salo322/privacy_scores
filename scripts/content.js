@@ -143,19 +143,23 @@ ctx.fillStyle = "#fff"
             <div class="winX">X</div>
             </div>
            <div class="line"></div>
-           <p class="text">Sorry, we haven't reviewed ${address} yet.
-
-           If you would like us to add it to the queue for our legal experts to review, hit the "Request" button now.</p>
+           <div class="gridCont">
+           <div class="text">Sorry, we haven't reviewed ${address} yet.</br>
+           If you would like us to add it to the queue for our legal experts to review, hit the "Request" button now.</div>
+           <div>
            <input class="buttonSc"
            type="button"
            value="request">
-            
+           </div>
+            </div>
             </div>`
   document.body.innerHTML += window;
   if(result.domSc){
     console.log(result.domSc)
+
     $('.text').html('request sent');
-    $('.buttonSc').css('display','none')
+    $('.buttonSc').css('display','none');
+    $('.window').css('height','150px');
     setTimeout(()=>{
       $('.window').remove();
     },2000)
