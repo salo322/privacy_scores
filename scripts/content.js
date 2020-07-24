@@ -1,24 +1,5 @@
 
-  
-let address = window.location.hostname;
-if(location.host.indexOf('www.') === 0){
-  address = location.host.replace('www.','');
-}
 
-if(location.host.indexOf('web.') === 0){
-  address = location.host.replace('web.','');
-}
-
-if(location.host.indexOf('docs.') === 0){
-  address = location.host.replace('docs.','');
-}
-console.log(address)
-chrome.runtime.sendMessage({message: "dom",domainS:address}, function(response) {
-  console.log(response.farewell);
-});
-chrome.runtime.sendMessage({message: "dom",domainS:address}, function(response) {
-  console.log(response.farewell);
-});
 
 
 chrome.runtime.onMessage.addListener(
@@ -29,7 +10,7 @@ function(request, sender, sendResponse) {
               
     
       chrome.storage.local.get(['key','prev','st'], function(result) {
-        if(result.st==='success'){
+        if(result.key && result.st === 'success'){
           function succWindow(){
           let scoresWindow = `
           <div class="scWindow">

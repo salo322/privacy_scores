@@ -3,13 +3,19 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   chrome.tabs.sendMessage(tabs[0].id, {greeting: "hello"})
   })
                  });
+ 
+                 chrome.tabs.onActivated.addListener(function () {
+                   console.log("current tab:",tabId)
+                  chrome.tabs.executeScript(tabId, { file: "scripts/add.js" });
+                 
+              })          
+                
 
+               chrome.runtime.onMessage.addListener(
+                function(request, sender, sendResponse) {                      
+                     if (request.message == "dom"){
+                        
 
- chrome.runtime.onMessage.addListener(
-   function(request, sender, sendResponse) {                      
-        if (request.message == "dom"){
-            console.log(request.domainS)
-            
 $.ajax({
   url: `https://api.privacymonitor.com/score?q=${request.domainS}`,
   type: 'GET',
@@ -23,12 +29,21 @@ $.ajax({
     chrome.storage.local.set({st:status});
     chrome.storage.local.set({key:data.score});
     chrome.storage.local.set({prev:data.previousScore});
+    chrome.storage.local.get(['key','prev','st'], function(result) {
+      if(result.key && result.st === 'success'){
     chrome.browserAction.setIcon({
       path: {
         38: "./images/blue.png"
          }
         });
-       
+      }else{
+        chrome.browserAction.setIcon({
+          path: {
+            38: "./images/grey.png"
+             }
+              })
+      }
+    })
     console.log(status)
     console.log(data.score)
     console.log(data.previousScore)
@@ -44,9 +59,8 @@ $.ajax({
     chrome.storage.local.set({st:status});
       }
     }); 
-                    }
-                      
-                  });
+            }
+          });
 
 
 

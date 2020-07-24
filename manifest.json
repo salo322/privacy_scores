@@ -25,7 +25,8 @@
             "css": ["css/content.css"],
             "js": [
                 "scripts/jquery.js",
-                "scripts/content.js"
+                "scripts/content.js",
+                "scripts/add.js"
             ]
         }
     ],
