@@ -123,23 +123,32 @@ ctx.fillStyle = "#fff"
           function errWindow(){
             let window = ` 
             <div class="window">
+            <div class="mainFlexErr">
+            <div class="flexErr">
+            <div class="privacyErr">Privacy</div>
+            <div class="monitorErr">monitor</div>
+            </div>
             <div class="winX">X</div>
-            <p class="text">Dear user, you can request to the website and analyse</p>
-            <input class="buttonSc"
-              type="button"
-              value="request">
-            </button>
+            </div>
+           <div class="line"></div>
+           <p class="text">Dear user, you can request to the website and analyse</p>
+           <input class="buttonSc"
+           type="button"
+           value="request">
+            
             </div>`
   document.body.innerHTML += window;
+  
   $('.window').nextAll('div').remove();
   
   
   $('.winX').click(function(){
   $('.window').remove();
   })
+  
           }
           errWindow();
-          $('.button').click(function(){
+          $('.buttonSc').click(function(){
             $(this).css('display','none');
               $.ajax(`https://api.privacymonitor.com/score?q=${address}`, {
                 success: function(data,status) {

@@ -10,3 +10,4 @@ if(location.host.indexOf('docs.') === 0){
 }
 console.log(address)
 chrome.runtime.sendMessage({message: "dom",domainS:address});
+
