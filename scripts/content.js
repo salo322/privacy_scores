@@ -154,7 +154,8 @@ ctx.fillStyle = "#fff"
             </div>
             </div>`
   document.body.innerHTML += window;
-  if(result.domSc){
+  if(result.domSc === this.window.location.hostname){
+   
     console.log(result.domSc)
 
     $('.text').html('request sent');

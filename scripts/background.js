@@ -23,6 +23,7 @@ $.ajax({
         console.log(response.farewell);
       });
     });
+    console.log(data)
     chrome.storage.local.set({st:status});
     chrome.storage.local.set({key:data.score});
     chrome.storage.local.set({prev:data.previousScore});
