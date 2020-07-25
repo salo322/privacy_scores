@@ -1,4 +1,3 @@
-
 let address = window.location.hostname;
 if(location.host.indexOf('www.') === 0){
   address = location.host.replace('www.','');
@@ -9,57 +8,48 @@ if(location.host.indexOf('web.') === 0){
 if(location.host.indexOf('docs.') === 0){
   address = location.host.replace('docs.','');
 }
-
 chrome.runtime.sendMessage({message: "dom",domainS:address});
 
-
-
-
 chrome.runtime.onMessage.addListener(
-function(request, sender, sendResponse) {
-  if (request.greeting == "hello"){   
-
-      chrome.storage.local.get(['key','prev','st','domSc'], function(result) {
-        
-        if(result.key && result.st === 'success'){
-          function succWindow(){
+  function(request, sender, sendResponse) {
+   if (request.greeting == "hello"){   
+    chrome.storage.local.get(['key','prev','st','domSc'], function(result) {
+       if(result.key && result.st === 'success'){
+        function succWindow(){
           let scoresWindow = `
-          <div class="scWindow">
+        <div class="scWindow">
           <div class="flexSc">
-            <div class="privacyMonitor">
+          <div class="privacyMonitor">
             <p class="textSc">Privacy</p>
             <p class="monitorSc">monitor</p>
-            </div>
-            <div class="x">X</div>
           </div>
-           <div class="line"></div>
-        
-        <div class="flexFor">
-              <div class="canvasSc">
-                <canvas id="cvs"></canvas>
-              </div>
-        
-        <div class="scoresContainer">
-            <div class="sc">
-                      <div class="scText">SCORE:</div>
-                      <div class="scores">${result.key}</div>
+          <div class="x">X</div>
+          </div>
+          <div class="line"></div>
+         <div class="flexFor">
+          <div class="canvasSc">
+            <canvas id="cvs"></canvas>
+         </div>
+         <div class="scoresContainer">
+           <div class="sc">
+          <div class="scText">SCORE:</div>
+          <div class="scores">${result.key}</div>
+           </div>
+         <div class="colorPrevSc" ></div>
+           <div class="trendFlex">
+             <p class="trendSc">Trend:</p>
+             <p class="prevSc">previous scores</p>
             </div>
-         
-            <div class="colorPrevSc" ></div>
-            <div class="trendFlex">
-                   <p class="trendSc">Trend:</p>
-                   <p class="prevSc">previous scores</p>
-            </div>
-        </div>
+          </div>
         </div>
         </div>`
  
       $(scoresWindow).appendTo(document.body);
       $('.scWindow').nextAll('div').remove();
 
-   $('.x').click(function(){
-   $('.scWindow').remove();
-    })
+      $('.x').click(function(){
+      $('.scWindow').remove();
+        })
 
     if(result.key===result.prev){
       console.log('same')
@@ -72,7 +62,7 @@ function(request, sender, sendResponse) {
      $('.prevSc').text('Increase');
      $('.prevSc').css('color','#ade498')
    }
-   if(result.key < result.prev){
+    if(result.key < result.prev){
      console.log('Decrease')
      $('.prevSc').text('Decrease');
      $('.prevSc').css('color','#e84a5f')
@@ -151,37 +141,26 @@ ctx.fillStyle = "#fff"
             <input class="buttonSc" type="button" value="request" />
             </div>
             </div>
-
             </div>`
   document.body.innerHTML += window;
   if(result.domSc === this.window.location.hostname){
-   
     console.log(result.domSc)
-
     $('.textScore').html('request sent');
     $('.buttonSc').css('display','none');
     setTimeout(()=>{
       $('.window').remove();
-    },2000)
-    
-         
+    },2000)      
   }  
-  
   $('.window').nextAll('div').remove();
-  
-  
   $('.winX').click(function(){
   $('.window').remove();
   })
-  
-          }
-          errWindow();
-          $('.buttonSc').click(function(){
-            $(this).css('display','none');
-
-            chrome.storage.local.set({domSc:address});
-           
-            
+}
+    errWindow();
+      $('.buttonSc').click(function(){
+       $(this).css('display','none');
+      chrome.storage.local.set({domSc:address});
+             
               $.ajax(`https://api.privacymonitor.com/score?q=${address}`, {
                 success: function(data,status) {
                 if(status==="success"){
@@ -205,13 +184,8 @@ ctx.fillStyle = "#fff"
 
         }else{
           errWindow();
-        }
-  
-
-
-       
-      })
-      
+        }       
+      })  
     }
   })   
 

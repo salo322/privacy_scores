@@ -1,18 +1,13 @@
-
-
 chrome.browserAction.onClicked.addListener(function(tab) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   chrome.tabs.sendMessage(tabs[0].id, {greeting: "hello"})
   })
                  });
  
-        
-
-     chrome.runtime.onMessage.addListener(
-      function(request, sender, sendResponse) {                      
-         if (request.message == "dom"){
-           
-                   
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {                      
+    if (request.message == "dom"){
+                        
 $.ajax({
   url: `https://api.privacymonitor.com/score?q=${request.domainS}`,
   type: 'GET',
