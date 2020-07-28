@@ -12,6 +12,7 @@
     
 }
 .scWindow{
+
     height:auto !important;
     z-index: 2147483647 !important;
     width: 240px !important;
@@ -31,6 +32,7 @@
     text-align: justify;
     line-height: 18px;
     padding: 25px;
+    width: 235px;
     
 }
 .x{
@@ -45,6 +47,9 @@
 .textSc{
     font-size: 18px !important;
     text-decoration: none !important;
+    display: flex;
+    flex-direction: row;
+    margin-top: -8px;
 }
 .monitorSc{
     font-size: 18px !important;
@@ -64,11 +69,13 @@
     padding:10px 10px !important;
     font-weight: bold;
     font-size: 15px;
+    flex-direction: row;
+    align-items: center;
+
 }
-.privacyMonitor{
+.privacy-dydydhjkjgk{
     display: flex !important;
     justify-content: space-around !important;
-    height:5px !important ;
     font-family: 'Bitter', serif;
 }
 
@@ -80,10 +87,12 @@
 .scoresContainer{
     display: grid !important;
     padding:30px 0 !important;
+    width: 200px;
 }
 .flexFor{
     display: flex !important;
     height: 110px;
+    flex-direction: row;
 }
 .trendFlex{
     display: flex !important;
@@ -99,13 +108,13 @@
 }
 .buttonSc{
     display: flex;
-    padding: 8px 29px;
+    padding: 6px 30px;
     background:#005082 !important;
     border:none !important;
-    border-radius: 5px !important;
+    border-radius: 1px !important;
     color:#fff !important;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px !important;
-    margin: -10px 70px !important;
+    margin: -12px 65px !important;
 
 }
 .privacyErr{
@@ -136,4 +145,9 @@
 }
 .buttonContainer{
     height: 40px !important;
+}
+
+.scWindow div{
+
+flex-direction: row;
 }

@@ -20,9 +20,8 @@ chrome.runtime.onMessage.addListener(
      let scoresWindow = `
    <div class="scWindow">
      <div class="flexSc">
-     <div class="privacyMonitor">
-       <p class="textSc">Privacy</p>
-       <p class="monitorSc">monitor</p>
+     <div class="privacy-dydydhjkjgk">
+     <div class="textSc">privacy<span style="color:#336d88; font-weight:bolder">monitor</span></div>
      </div>
      <div class="x">X</div>
      </div>
@@ -38,8 +37,9 @@ chrome.runtime.onMessage.addListener(
       </div>
     <div class="colorPrevSc" ></div>
       <div class="trendFlex">
-        <p class="trendSc">Trend:</p>
-        <p class="prevSc">previous scores</p>
+        <div class="trendSc" >Trend: </div>
+        <div class="prevSc" >previous scores</div>
+    
        </div>
      </div>
    </div>
