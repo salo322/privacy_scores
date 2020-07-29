@@ -4,11 +4,12 @@ function requestIcons(){
     let url = new URL(tab.url)
     let domain = url.hostname
      
-      chrome.runtime.onMessage.addListener(
-        function(request, sender, sendResponse) {
-         if (request.message === "getDom"){  
-          chrome.storage.local.set({dmn:domain});
-         }})
+    chrome.runtime.onMessage.addListener(
+      function(request, sender, sendResponse) {
+       if (request.message === "getDom"){  
+        chrome.storage.local.set({dmn:domain});
+        
+       }})
                      
   chrome.tabs.sendMessage(tabs[0].id, {getDomain: "domains", dm:domain});
     
@@ -70,6 +71,11 @@ $.ajax({
     });
   })
 }
+
+
+
+
+
 chrome.tabs.onActivated.addListener(function() {
  requestIcons();
 })

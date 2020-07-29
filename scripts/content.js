@@ -124,7 +124,6 @@ ctx.fillStyle = "#fff"
    }else if(result.st==='error'){
      
      function errWindow(){
-       console.log('err')
        let window = ` 
        <div class="window">
        <div class="mainFlexErr">
@@ -142,14 +141,16 @@ ctx.fillStyle = "#fff"
        </div>
        </div>
        </div>`
-document.body.innerHTML += window;
+
+    $(window).appendTo(document.body);
 if(result.dmn === this.window.location.hostname){
-  console.log(result.domSc)
+  console.log(result.dmn)
   $('.textScore').html('request sent');
-  $('.buttonSc').css('display','none');
+  $('.buttonSc').remove();
   setTimeout(()=>{
     $('.window').remove();
-  },2000)      
+  },2000) 
+       
 }  
 $('.window').nextAll('div').remove();
 $('.winX').click(function(){
@@ -163,20 +164,22 @@ $('.window').remove();
 }
 errWindow();
  $('.buttonSc').click(function(){
-  $(this).css('display','none');
- setTimeout(()=>{
+  if(result.key && result.st === 'success'){
+  succWindow();
+  }else{
+  $('.buttonSc').remove();
+  $('.textScore').html('request sent');
+  setTimeout(()=>{
   $('.window').remove();
- },1000)
- chrome.runtime.sendMessage({message: "getDom"});
+  },1000)
+}
+    chrome.runtime.sendMessage({message: "getDom"});
      })
 
    }else{
      errWindow();
+    
    }       
  })  
-
-
-
-
    }
   })
